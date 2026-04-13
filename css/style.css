@@ -1,0 +1,736 @@
+:root {
+  /* Color palette (5) */
+  --navy: #1335a5;
+  --teal: #0ea5e9;
+  --aqua: #dbeafe;
+  --sand: #f4efe6;
+  --white: #ffffff;
+
+  /* Typography (2 families) */
+  --font-body: "Inter", system-ui, Arial, sans-serif;
+  --font-headings: "Poppins", system-ui, Arial, sans-serif;
+
+  /* Type scale */
+  --text-sm: clamp(0.875rem, 0.84rem + 0.15vw, 1rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.03rem + 0.45vw, 1.375rem);
+  --text-xl: clamp(1.35rem, 1.15rem + 0.9vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);
+  --text-3xl: clamp(2.2rem, 1.6rem + 3vw, 4rem);
+
+  /* Spacing scale */
+  --space-1: clamp(0.5rem, 0.45rem + 0.2vw, 0.75rem);
+  --space-2: clamp(1rem, 0.9rem + 0.35vw, 1.25rem);
+  --space-3: clamp(1.5rem, 1.3rem + 0.7vw, 2rem);
+  --space-4: clamp(2rem, 1.7rem + 1vw, 2.75rem);
+  --space-5: clamp(3rem, 2.5rem + 1.5vw, 4rem);
+
+  /* Layouts & visuals */
+  --max-width: 70rem;
+  --radius: 1rem;
+  --shadow: 0 10px 30px rgba(19, 53, 165, 0.12);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box; /* box model control */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--navy);
+  background: var(--white);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-headings);
+  line-height: 1.2;
+  margin: 0 0 var(--space-2);
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p,
+li,
+a,
+label,
+input,
+select,
+textarea,
+button,
+.small,
+.footer-text,
+.footer-links,
+.event-meta,
+.role {
+  font-size: var(--text-base);
+}
+
+.small,
+.role,
+.event-meta,
+.mini-heading {
+  font-size: var(--text-sm);
+}
+
+p {
+  margin: 0 0 var(--space-2);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.intro--hero {
+  background-image: 
+    linear-gradient(
+      to bottom,
+      rgba(11, 31, 51, 0.6),
+      rgba(11, 31, 51, 0.4) ),
+    url("../images/beach-waves-800.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.intro--turtle {
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(11, 31, 51, 0.5),
+      rgba(11, 31, 51, 0.3)),
+    url("../images/turtle.jpg");
+  background-position: center 40%;
+}
+
+.intro--turtle .container {
+  align-items: flex-end;
+}
+
+.intro--turtle h1,
+.intro--turtle .lead {
+  max-width: 38ch;
+}
+
+.intro--hero h1,
+.intro--hero .lead,
+.intro--hero h2 {
+  color: var(--white);
+}
+
+.intro--hero .card {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--teal);
+  color: var(--white);
+  padding: var(--space-2);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Layout, have consistent containers and section spacing */
+
+.container {
+  width: min(100% - (var(--space-4) * 2), var(--max-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding: var(--space-5) 0;
+}
+
+.section--tint {
+  background: var(--sand);
+}
+
+/* Intro sections (use on each page) */
+.intro img {
+  margin-top: var(--space-3);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  max-width: 55rem;
+}
+
+/* Reusable button row (use on home, about, contact) */
+.intro-actions {
+  display: flex;      /* Flexbox */
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-3);
+}
+
+/*Nav (add flexbox), Consistent nav, current page indicator */
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid rgba(19, 53, 165, 0.12);
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: column;               
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  gap: var(--space-3);
+}
+
+.logo {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex; 
+  flex-direction: column;
+  width: 100%;              
+  gap: var(--space-1);
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link,
+.nav-link-current,
+.btn {
+  min-height: 44px;
+}
+
+.nav-link,
+.nav-link-current {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.75rem;
+}
+
+.nav-link:hover {
+  background: rgba(14, 165, 233, 0.12);
+}
+
+/* current page */
+.nav-link-current {
+  background: var(--aqua);
+}
+
+.btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal);
+  color: var(--white);
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+.btn:active{
+  transform: scale(0.97);
+}
+
+.btn--secondary {
+  background: var(--navy);
+}
+
+.text-link {
+  font-weight: 600;
+}
+
+/* Cards & Flex rows (home/about/programs/contact) */
+
+.card-row,
+.stats-row,
+.timeline,
+.events,
+.steps,
+.faq,
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.card,
+.stat,
+.event,
+.faq-item,
+.timeline li,
+.steps li {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: var(--shadow);
+}
+
+.card p {
+  margin-bottom: var(--space-2);
+}
+
+.stat-number {
+  font-family: var(--font-headings);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.stat-label {
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* About page extras, Values list, Timeline (Flexbox cards), Team role styling */
+
+.values-list {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.values-list li {
+  margin-bottom: var(--space-1);
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.role {
+  font-weight: 600;
+  opacity: 0.85;
+  margin-top: -0.5rem;
+}
+
+/* Program page extras, Mini headings, lists inside cards, Events */
+
+.mini-heading {
+  font-family: var(--font-headings);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.mini-list {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.mini-list li {
+  margin-bottom: var(--space-1);
+}
+
+.events {
+  margin: var(--space-3) 0;
+}
+
+.event-meta {
+  opacity: 0.9;
+}
+
+/* CONTACT PAGE EXTRAS, Small helper text, Volunteer steps , FAQ (Flexbox cards) */
+
+.small {
+  opacity: 0.85;
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+}
+
+.steps h3 {
+  margin-bottom: var(--space-1);
+}
+
+.faq {
+  margin-top: var(--space-3);
+}
+
+/* FORM STYLES */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.form input,
+.form select,
+.form textarea {
+  padding: 0.75rem;
+  border: 1px solid rgba(11, 31, 51, 0.2);
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: inherit;
+  width: 100%;
+}
+
+/* Focus state (required) */
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* Error state */
+.form input:invalid,
+.form textarea:invalid,
+.form select:invalid {
+  border-color: red;
+}
+
+/* Fieldset styling */
+fieldset.form-group {
+  border: 1px solid rgba(11, 31, 51, 0.2);
+  border-radius: 0.5rem;
+  padding: var(--space-2);
+}
+
+legend {
+  font-weight: 600;
+}
+
+.choice-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: var(--space-1);
+}
+
+.choice-group input {
+  width: auto;
+  margin: 0;
+}
+
+.choice-group label {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* Button states */
+button.btn:hover {
+  filter: brightness(0.9);
+}
+
+button.btn:active {
+  transform: scale(0.97);
+}
+
+/* Success message */
+.success-message {
+  margin-top: var(--space-2);
+  padding: var(--space-2);
+  background: #d1fae5;
+  border-radius: 0.5rem;
+  color: #065f46;
+  font-weight: 600;
+}
+
+/*  FOOTER */
+
+.site-footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: var(--space-5) 0 var(--space-3);
+}
+
+.footer-inner {
+  align-items: flex-start;
+}
+
+.footer-title {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.footer-text {
+  opacity: 0.9;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: var(--space-1);
+}
+
+.footer-links a {
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  margin-top: var(--space-4);
+  padding-top: var(--space-2);
+  font-size: var(--text-sm);
+  opacity: 0.9;
+}
+
+/* Breakpoint 1 */
+
+@media (min-width: 40rem) {
+  .site-nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-list {
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .card-row,
+  .stats-row,
+  .events,
+  .steps,
+  .faq {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section {
+    padding: var(--space-5) 0;
+  }
+}
+
+/* Breakpoint 2 */
+
+@media (min-width: 56rem) {
+  .card-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stats-row,
+  .events,
+  .steps,
+  .faq {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .timeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .footer-inner {
+    grid-template-columns: 1.2fr 1fr 1fr;
+  }
+
+  .lead {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Breakpoint 3 */
+
+@media (min-width: 72rem) {
+  .intro .container {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+   .intro--hero .container{
+    display: block;
+  }
+
+  .intro img {
+    margin-top: 0;
+  }
+
+  .container {
+    width: min(100% - (var(--space-5) * 2), var(--max-width));
+  }
+}
+
+/* COuntainer Queries */
+
+.card,
+.event,
+.faq-item,
+.stat,
+.timeline li,
+.steps li {
+  container-type: inline-size;
+  container-name: card;
+}
+
+@container card (min-width: 22rem) {
+  .card,
+  .event,
+  .faq-item,
+  .stat,
+  .timeline li,
+  .steps li {
+    padding: var(--space-4);
+  }
+
+  .card h3,
+  .event h3,
+  .faq-item h3,
+  .steps h3,
+  .timeline h3 {
+    font-size: var(--text-2xl);
+  }
+}
+
+@container card (min-width: 30rem) {
+  .card p,
+  .event p,
+  .faq-item p,
+  .timeline p,
+  .steps p {
+    max-width: 60ch;
+  }
+
+   .mini-list {
+    columns: 2;
+    column-gap: var(--space-3);
+  }
+}
+
+
+
+.lead {
+  font-size: var(--text-lg);
+}
+
+/* FLEXIBLE IMAGES */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+/* CARD AS A CONTAINER QUERY CONTEXT */
+.card,
+.event,
+.faq-item,
+.stat,
+.timeline li,
+.steps li {
+  container-type: inline-size;
+  container-name: card;
+}
+
+/* Base card styling stays the same */
+.card,
+.event,
+.faq-item,
+.stat,
+.timeline li,
+.steps li {
+  padding: var(--space-3);
+}
+
+/* Container query rule 1:
+   when the card itself gets wider, increase padding and heading size */
+@container card (min-width: 22rem) {
+  .card,
+  .event,
+  .faq-item,
+  .stat,
+  .timeline li,
+  .steps li {
+    padding: var(--space-4);
+  }
+
+  .card h3,
+  .event h3,
+  .faq-item h3,
+  .steps h3,
+  .timeline h3 {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* Container query rule 2:
+   when the card is even wider, lay out internal content more spaciously */
+@container card (min-width: 30rem) {
+  .card p,
+  .event p,
+  .faq-item p,
+  .timeline p,
+  .steps p {
+    max-width: 60ch;
+  }
+
+  .mini-list {
+    columns: 2;
+    column-gap: var(--space-3);
+  }
+}

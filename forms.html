@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Explore Blue Horizon Initiative programs including cleanups, restoration, and education." >
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Contact | Blue Horizon Initiative</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+
+      <div class="container">
+        <nav class="site-nav" aria-label="primary navigation">
+          <a class="logo" href="index.html">Blue Horizon</a>
+
+          <ul class="nav-list">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About</a></li>
+            <li><a class="nav-link" href="programs.html">Programs</a></li>
+            <li><a class="nav-link" href="contact.html" aria-current="page">Contact</a></li>
+            <li><a class="nav-link-current" href="forms.html">Form</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      </header>
+        <main id="main">
+
+          <section class="section intro">
+            <div class="container">
+              <h1>Volunteer With Us</h1>
+              <p class="lead">
+                Join our community efforts to protect oceans through cleanups, restoration, and education.
+              </p>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="container">
+              <h2>Sign Up to Volunteer</h2>
+
+              <form action="#" method="post" class="form">
+
+
+                <!-- NAME -->
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" minlength="2" required>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- PHONE -->
+                <div class="form-group">
+                  <label for="phone">Phone *</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    placeholder="123-456-7890"
+                    required>
+                  <p class="small">We'll only call if there's an issue with your signup.</p>
+                </div>
+
+                <!-- NUMBER -->
+                <div class="form-group">
+                  <label for="group">Group Size *</label>
+                  <input type="number" id="group" name="group" min="1" max="20" 
+                  inputmode="numeric" >
+                </div>
+
+                <!-- SELECT -->
+                <div class="form-group">
+                  <label for="program">Program *</label>
+                  <select id="program" name="program" required>
+                    <option value="">Choose one</option>
+                    <option value="cleanup">Cleanup</option>
+                    <option value="restoration">Restoration</option>
+                    <option value="education">Education</option>
+                  </select>
+                </div>
+
+                <!-- RADIO -->
+                <fieldset class="form-group">
+                  <legend>Preferred Contact *</legend>
+
+                  <div class="choice-group">
+                    <input type="radio" id="contact-email" name="contact" value="email" required>
+                    <label for="contact-email">Email</label>  
+                  </div>
+
+                  <div class="choice-group">
+                    <input type="radio" id="contact-phone" name="contact" value="phone">
+                    <label for="contact-phone">Phone</label>
+                  </div>
+                </fieldset>
+
+                <!-- CHECKBOX -->
+                <fieldset class="form-group">
+
+                  <legend>Interests *</legend>
+
+                  <div class="choice-group">
+                    <input type="checkbox" id="interest-cleanup" name="interest" value="cleanup" required>
+                    <label for="interest-cleanup">Cleanups</label>
+                  </div>
+
+                  <div class="choice-group">
+                    <input type="checkbox" id="interest-restoration" name="interest" value="restoration">
+                    <label for="interest-restoration">Restoration</label>
+                  </div>
+
+                  <div class="choice-group">
+                    <input type="checkbox" id="interest-education" name="interest" value="education">
+                    <label for="interest-education">Education</label>
+                  </div>
+                </fieldset>
+
+                <!-- TEXTAREA -->
+                <div class="form-group">
+                  <label for="message">Comments *</label>
+                  <textarea id="message" name="message" maxlength="300" required></textarea>
+                  <p class="small">Max 300 characters</p>
+                </div>
+
+                <!-- BUTTON -->
+                <button type="submit" class="btn">Sign Up</button>
+
+                <!-- SUCCESS MESSAGE -->
+                <p class="success-message">
+                  Thanks! We’ve received your signup and will contact you within 24 hours.
+                </p>
+
+              </form>
+            </div>
+          </section>
+
+          <section class="section section--tint">
+            <div class="container cta">
+              <h2>Support Our Work</h2>
+              <p>
+                Can't volunteer right now? A donation helps fund cleanup supplies, 
+                restoration projects, and school education programs.
+              </p>
+              <div class="intro-actions">
+                <a class="btn" href="contact.html">Donate</a>
+                <a class="btn btn--secondary" href="contact.html">Learn More</a>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="site-footer">
+          <div class="container footer-inner">
+            <div>
+              <p class="footer-title">Blue Horizon Initiative</p>
+              <p class="footer-text">Protecting oceans through local action and education.</p>
+            </div>
+
+            <div>
+              <p class="footer-title">Get involved</p>
+              <ul class="footer-links">
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="forms.html">Volunteer</a></li>
+                <li><a href="contact.html">Donate</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="footer-title">Contact</p>
+                <ul class="footer-links">
+                  <li><a href="contact.html">Contact page</a></li>
+                  <li><a href="mailto:hello@bluehorizon.org">hello@bluehorizon.org</a></li>
+                </ul>
+            </div>
+          </div>
+
+          <div class="container footer-bottom">
+            <p>© <span>2026</span> Blue Horizon Initiative. All rights reserved.</p>
+          </div>    
+        </footer>
+  </body>
+</html>
