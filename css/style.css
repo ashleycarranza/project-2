@@ -1,7 +1,7 @@
 :root {
   /* Color palette (5) */
   --navy: #1335a5;
-  --teal: #0ea5e9;
+  --teal: #0369a1;
   --aqua: #dbeafe;
   --sand: #f4efe6;
   --white: #ffffff;
@@ -244,7 +244,7 @@ textarea:focus-visible {
 }
 
 .nav-link:hover {
-  background: rgba(14, 165, 233, 0.12);
+  background: rgba(3, 105, 161, 0.12);
 }
 
 /* current page */
