@@ -653,7 +653,7 @@ button.btn:active {
   .faq-item p,
   .timeline p,
   .steps p {
-    max-width: 60ch;
+    max-width: 60rem;
   }
 
    .mini-list {
